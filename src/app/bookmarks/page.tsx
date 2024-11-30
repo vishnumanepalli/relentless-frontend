@@ -50,6 +50,7 @@ export default function BookmarksPage() {
         }
       } catch (err) {
         setError('An unknown error occurred');
+        console.log(err);
       } finally {
         setLoading(false);
       }
