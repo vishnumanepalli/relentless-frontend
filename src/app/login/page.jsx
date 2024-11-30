@@ -1,5 +1,5 @@
 'use client';
-import react, { useState } from 'react';
+import { useState } from 'react';
 import { sendLoginData } from '@/services/userService';
 
 export default function LoginPage() {
@@ -16,7 +16,7 @@ export default function LoginPage() {
       const response = await sendLoginData(username, password);
       if (response.ok) {
         const data = await response.json();
-        const authToken = data.auth_token; 
+        const authToken = data.auth_token;
         localStorage.setItem('auth_token', authToken);
         alert('Login successful!');
         window.location.href = '/search';
